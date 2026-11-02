@@ -1,0 +1,370 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.residences-section {
+  --cream: #f1ecd9;
+  --gold: #a9824f;
+  --dark-green: #464a3e;
+  --body-text: #967a56;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 115vh;
+  height: 115vh;
+  overflow: hidden;
+  padding: 35px 5%;
+  color: var(--dark-green);
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.residences-background {
+  position: absolute;
+  inset: -2%;
+  z-index: -1;
+  opacity: 0;
+  background:
+    radial-gradient(
+      ellipse at 70% 15%,
+      #fffdf2 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 15% 90%,
+      #e4d8bd 0%,
+      transparent 45%
+    ),
+    linear-gradient(
+      125deg,
+      #f4eedc,
+      #eee8d5 55%,
+      #e9e2cf
+    );
+}
+
+.residences-background::before {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 120%;
+  top: -10%;
+  right: -10%;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(75px);
+  transform: rotate(-25deg);
+}
+
+/* NAVIGATION */
+
+.residences-nav {
+  position: absolute;
+  z-index: 10;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(620px, 85%);
+  height: 58px;
+  padding: 7px 9px 7px 23px;
+  border-radius: 50px;
+  background: #454a3f;
+  color: #f5efdf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  box-shadow: 0 8px 30px rgba(45, 49, 39, 0.12);
+}
+
+.residence-menu {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 37px;
+}
+
+.menu-icon span {
+  width: 100%;
+  height: 1px;
+  background: #a8a88f;
+}
+
+.residence-logo {
+  font-size: 34px;
+  color: #b18b54;
+}
+
+.residence-inquire {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 17px;
+  border: 1px solid rgba(226, 215, 186, 0.3);
+  border-radius: 40px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: all 0.35s ease;
+}
+
+.residence-inquire:hover {
+  background: rgba(255, 255, 255, 0.12);
+  gap: 21px;
+}
+
+/* MAIN IMAGE */
+
+.residence-main-image {
+  position: absolute;
+  top: 9%;
+  left: 5%;
+  width: min(40vw, 620px);
+  height: 47vh;
+  min-height: 300px;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #ded5c1;
+  box-shadow: 0 25px 65px rgba(79, 65, 43, 0.14);
+}
+
+.residence-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.residence-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 22px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.5)
+  );
+  pointer-events: none;
+}
+
+/* HEADING */
+
+.residences-title-wrap {
+  position: absolute;
+  top: 57%;
+  left: 5%;
+  z-index: 3;
+}
+
+.residences-eyebrow {
+  display: block;
+  color: #8f795c;
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
+}
+
+.residences-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(75px, 10vw, 175px);
+  letter-spacing: -7px;
+  line-height: 0.95;
+  color: var(--gold);
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.residences-title span {
+  color: #4b5042;
+}
+
+/* DESCRIPTION */
+
+.residences-description {
+  position: absolute;
+  right: 1%;
+  bottom: 17%;
+  width: min(40%, 560px);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  opacity: 0;
+}
+
+.description-line {
+  flex-shrink: 0;
+  width: 42px;
+  height: 1px;
+  margin-top: 9px;
+  background: #b38b54;
+}
+
+.description-label {
+  display: block;
+  margin-bottom: 15px;
+  color: #6f715e;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.residences-description p {
+  color: var(--body-text);
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+}
+
+.residence-discover {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #b38b54;
+  color: #8e7047;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: gap 0.3s ease;
+}
+
+.residence-discover:hover {
+  gap: 20px;
+}
+
+/* FOOTER */
+
+.residences-bottom {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  color: #97876b;
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .residences-section {
+    height: 110vh;
+    min-height: 850px;
+  }
+
+  .residence-main-image {
+    width: 48vw;
+    height: 40vh;
+  }
+
+  .residences-title {
+    font-size: 10vw;
+  }
+
+  .residences-description {
+    width: 43%;
+    right: 5%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .residences-section {
+    height: auto;
+    min-height: 1050px;
+    padding: 25px 6%;
+  }
+
+  .residences-nav {
+    width: 88%;
+    height: 52px;
+  }
+
+  .residence-logo {
+    font-size: 27px;
+  }
+
+  .residence-main-image {
+    top: 12%;
+    left: 6%;
+    width: 88%;
+    height: 35vh;
+    min-height: 250px;
+  }
+
+  .residences-title-wrap {
+    top: 54%;
+    left: 6%;
+  }
+
+  .residences-eyebrow {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .residences-title {
+    font-size: 12vw;
+    letter-spacing: -3px;
+  }
+
+  .residences-description {
+    left: 6%;
+    right: auto;
+    bottom: 12%;
+    width: 88%;
+    gap: 12px;
+  }
+
+  .description-line {
+    width: 20px;
+  }
+
+  .residences-description p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .residences-bottom {
+    left: 6%;
+    right: 6%;
+    bottom: 3%;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .residences-bottom span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .residences-title {
+    font-size: 11vw;
+  }
+
+  .residences-description {
+    bottom: 11%;
+  }
+}

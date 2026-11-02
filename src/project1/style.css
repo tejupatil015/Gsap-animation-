@@ -1,0 +1,316 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #090909;
+  --surface: #11110f;
+  --text: #f4f0e8;
+  --muted: #aaa49a;
+  --accent: #d6b77a;
+  --border: rgba(214, 183, 122, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* MAIN HERO */
+
+.scroll-scene {
+  min-height: 100vh;
+  height: 100vh;
+  padding: 35px 7% 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 45%, #29251e 0%, #15130f 38%, #090909 78%);
+}
+
+.scroll-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+}
+
+.scene-heading {
+  text-align: center;
+  z-index: 3;
+}
+
+.scene-heading > span,
+.next-section > span {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.scene-heading h1 {
+  font: 500 clamp(32px, 4vw, 58px) 'Playfair Display', serif;
+  margin-top: 12px;
+  letter-spacing: -1.5px;
+}
+
+.scene-heading h1 span,
+.next-section h2 span {
+  color: var(--accent);
+}
+
+/* IMAGE AND TEXT LAYOUT */
+
+.scene-layout {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene-image {
+  position: absolute;
+  width: min(42vw, 560px);
+  height: min(60vh, 480px);
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.65),
+    0 0 50px rgba(214, 183, 122, 0.08);
+  will-change: transform;
+}
+
+.scene-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(0, 0, 0, 0.6)
+  );
+  pointer-events: none;
+}
+
+.scene-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.8);
+  transition: filter 0.8s ease;
+}
+
+.scene-image:hover img {
+  filter: saturate(1);
+}
+
+.scene-image-label {
+  position: absolute;
+  bottom: 24px;
+  left: 25px;
+  z-index: 2;
+  color: #f4f0e8;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* SIDE TEXT */
+
+.scene-text {
+  position: absolute;
+  width: 29%;
+  max-width: 330px;
+  opacity: 0;
+  z-index: 3;
+}
+
+.left-text {
+  left: 0;
+  text-align: left;
+}
+
+.right-text {
+  right: 0;
+  text-align: left;
+}
+
+.scene-number {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.scene-text h2 {
+  font: 500 clamp(30px, 3.5vw, 49px)/1.12 'Playfair Display', serif;
+  letter-spacing: -1px;
+}
+
+.scene-text h2 span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.scene-text p {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+  max-width: 290px;
+}
+
+.scene-text a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  margin-top: 28px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: gap 0.35s ease;
+}
+
+.scene-text a:hover {
+  gap: 20px;
+}
+
+/* FOOTER */
+
+.scene-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #777168;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* NEXT SECTION */
+
+.next-section {
+  min-height: 75vh;
+  padding: 110px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at center, #211d17 0%, #11100e 48%, #090909 100%);
+}
+
+.next-section h2 {
+  font: 500 clamp(55px, 9vw, 115px) 'Playfair Display', serif;
+  margin: 25px 0;
+  letter-spacing: -3px;
+}
+
+.next-section p {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .scroll-scene {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .scene-image {
+    width: 42vw;
+    height: 48vh;
+  }
+
+  .scene-text {
+    width: 30%;
+  }
+
+  .scene-text h2 {
+    font-size: clamp(25px, 3.5vw, 36px);
+  }
+}
+
+@media (max-width: 700px) {
+  .scroll-scene {
+    padding: 30px 6% 25px;
+  }
+
+  .scene-layout {
+    min-height: 570px;
+  }
+
+  .scene-image {
+    width: 65vw;
+    height: 310px;
+  }
+
+  .scene-text {
+    width: 43%;
+    top: 70%;
+  }
+
+  .scene-text h2 {
+    font-size: clamp(20px, 5vw, 30px);
+  }
+
+  .scene-text p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .scene-text a {
+    font-size: 9px;
+    margin-top: 15px;
+  }
+
+  .scene-number {
+    font-size: 8px;
+    margin-bottom: 10px;
+  }
+
+  .scene-image-label {
+    font-size: 8px;
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .scene-footer {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+}

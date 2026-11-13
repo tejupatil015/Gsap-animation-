@@ -1,11 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
+/* =================================
+   LUXURY RESIDENCES THEME
+================================= */
+
 .residences-section {
-  --cream: #f1ecd9;
-  --gold: #a9824f;
-  --dark-green: #464a3e;
-  --body-text: #967a56;
+  --cream: #F4EFE6;
+  --surface: #FBF8F2;
+  --champagne: #B99B70;
+  --dark: #263C38;
+  --sage: #A3B5A5;
+  --body-text: #777D72;
+  --border: rgba(38, 60, 56, 0.15);
 
   position: relative;
   isolation: isolate;
@@ -14,7 +21,7 @@
   height: 115vh;
   overflow: hidden;
   padding: 35px 5%;
-  color: var(--dark-green);
+  color: var(--dark);
   background: var(--cream);
   font-family: 'DM Sans', sans-serif;
 }
@@ -26,20 +33,20 @@
   opacity: 0;
   background:
     radial-gradient(
-      ellipse at 70% 15%,
-      #fffdf2 0%,
+      ellipse at 75% 12%,
+      #FFFCF7 0%,
       transparent 45%
     ),
     radial-gradient(
-      ellipse at 15% 90%,
-      #e4d8bd 0%,
-      transparent 45%
+      ellipse at 10% 85%,
+      #DDE3D8 0%,
+      transparent 48%
     ),
     linear-gradient(
       125deg,
-      #f4eedc,
-      #eee8d5 55%,
-      #e9e2cf
+      #F4EFE6,
+      #EEE7DB 55%,
+      #E8DFD0
     );
 }
 
@@ -50,12 +57,14 @@
   height: 120%;
   top: -10%;
   right: -10%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(163, 181, 165, 0.2);
   filter: blur(75px);
   transform: rotate(-25deg);
 }
 
-/* NAVIGATION */
+/* =================================
+   NAVIGATION
+================================= */
 
 .residences-nav {
   position: absolute;
@@ -67,13 +76,14 @@
   height: 58px;
   padding: 7px 9px 7px 23px;
   border-radius: 50px;
-  background: #454a3f;
-  color: #f5efdf;
+  background: #263C38;
+  color: #F4EFE6;
   display: flex;
   align-items: center;
   justify-content: space-between;
   opacity: 0;
-  box-shadow: 0 8px 30px rgba(45, 49, 39, 0.12);
+  box-shadow: 0 12px 35px rgba(38, 60, 56, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .residence-menu {
@@ -95,12 +105,12 @@
 .menu-icon span {
   width: 100%;
   height: 1px;
-  background: #a8a88f;
+  background: #D8C8B2;
 }
 
 .residence-logo {
   font-size: 34px;
-  color: #b18b54;
+  color: #C8AA7D;
 }
 
 .residence-inquire {
@@ -108,7 +118,7 @@
   align-items: center;
   gap: 15px;
   padding: 12px 17px;
-  border: 1px solid rgba(226, 215, 186, 0.3);
+  border: 1px solid rgba(244, 239, 230, 0.3);
   border-radius: 40px;
   font-size: 10px;
   letter-spacing: 1px;
@@ -120,7 +130,9 @@
   gap: 21px;
 }
 
-/* MAIN IMAGE */
+/* =================================
+   MAIN IMAGE
+================================= */
 
 .residence-main-image {
   position: absolute;
@@ -131,8 +143,10 @@
   min-height: 300px;
   border-radius: 17px;
   overflow: hidden;
-  background: #ded5c1;
-  box-shadow: 0 25px 65px rgba(79, 65, 43, 0.14);
+  background: #D8C8B2;
+  box-shadow:
+    0 25px 65px rgba(38, 60, 56, 0.13),
+    0 5px 15px rgba(38, 60, 56, 0.06);
 }
 
 .residence-main-image img {
@@ -151,17 +165,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: #FFFFFF;
   font-size: 10px;
   letter-spacing: 2px;
   background: linear-gradient(
     transparent,
-    rgba(0, 0, 0, 0.5)
+    rgba(24, 42, 37, 0.68)
   );
   pointer-events: none;
 }
 
-/* HEADING */
+/* =================================
+   HEADING
+================================= */
 
 .residences-title-wrap {
   position: absolute;
@@ -172,10 +188,11 @@
 
 .residences-eyebrow {
   display: block;
-  color: #8f795c;
+  color: #9A805D;
   font-size: 10px;
   letter-spacing: 4px;
   margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .residences-title {
@@ -184,16 +201,18 @@
   font-size: clamp(75px, 10vw, 175px);
   letter-spacing: -7px;
   line-height: 0.95;
-  color: var(--gold);
+  color: #B99B70;
   white-space: nowrap;
   opacity: 0;
 }
 
 .residences-title span {
-  color: #4b5042;
+  color: #263C38;
 }
 
-/* DESCRIPTION */
+/* =================================
+   DESCRIPTION
+================================= */
 
 .residences-description {
   position: absolute;
@@ -211,15 +230,15 @@
   width: 42px;
   height: 1px;
   margin-top: 9px;
-  background: #b38b54;
+  background: #B99B70;
 }
 
 .description-label {
   display: block;
   margin-bottom: 15px;
-  color: #6f715e;
+  color: #718477;
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 3px;
 }
 
@@ -236,19 +255,22 @@
   gap: 12px;
   margin-top: 22px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #b38b54;
-  color: #8e7047;
+  border-bottom: 1px solid #B99B70;
+  color: #92744D;
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1.5px;
-  transition: gap 0.3s ease;
+  transition: gap 0.3s ease, color 0.3s ease;
 }
 
 .residence-discover:hover {
   gap: 20px;
+  color: #263C38;
 }
 
-/* FOOTER */
+/* =================================
+   FOOTER
+================================= */
 
 .residences-bottom {
   position: absolute;
@@ -259,13 +281,15 @@
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  color: #97876b;
+  color: #8A887B;
   font-size: 9px;
   letter-spacing: 2px;
   opacity: 0;
 }
 
-/* TABLET */
+/* =================================
+   TABLET
+================================= */
 
 @media (max-width: 900px) {
   .residences-section {
@@ -288,7 +312,9 @@
   }
 }
 
-/* MOBILE */
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 650px) {
   .residences-section {

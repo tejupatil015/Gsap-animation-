@@ -2,12 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #090909;
-  --surface: #11110f;
-  --text: #f4f0e8;
-  --muted: #aaa49a;
-  --accent: #d6b77a;
-  --border: rgba(214, 183, 122, 0.25);
+  --bg: #F7F1E8;
+  --surface: #FFFCF7;
+  --text: #263C38;
+  --muted: #7E8980;
+  --accent: #6F9C96;
+  --border: rgba(111, 156, 150, 0.25);
+
+  --sand: #E8D8C3;
+  --seafoam: #B9C9BD;
+  --ocean: #244A49;
+  --deep-teal: #557F77;
+  --cream: #FDF9F2;
 }
 
 * {
@@ -31,7 +37,9 @@ a {
   text-decoration: none;
 }
 
-/* MAIN HERO */
+/* =====================================
+   MAIN HERO
+===================================== */
 
 .scroll-scene {
   min-height: 100vh;
@@ -43,9 +51,17 @@ a {
   flex-direction: column;
   justify-content: space-between;
   isolation: isolate;
+
   background:
-    radial-gradient(ellipse at 50% 45%, #29251e 0%, #15130f 38%, #090909 78%);
+    radial-gradient(
+      ellipse at 50% 45%,
+      #FFFCF7 0%,
+      #F3E9DB 42%,
+      #E8D8C3 100%
+    );
 }
+
+/* SOFT TEXTURE */
 
 .scroll-scene::before {
   content: "";
@@ -53,8 +69,25 @@ a {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.12;
+
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+}
+
+/* DECORATIVE SEAFOAM GLOW */
+
+.scroll-scene::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(111, 156, 150, 0.18);
+  filter: blur(100px);
+  right: -100px;
+  top: 15%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .scene-heading {
@@ -64,16 +97,17 @@ a {
 
 .scene-heading > span,
 .next-section > span {
-  color: var(--accent);
+  color: var(--deep-teal);
   font-size: 10px;
   letter-spacing: 5px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .scene-heading h1 {
   font: 500 clamp(32px, 4vw, 58px) 'Playfair Display', serif;
   margin-top: 12px;
   letter-spacing: -1.5px;
+  color: var(--ocean);
 }
 
 .scene-heading h1 span,
@@ -81,7 +115,9 @@ a {
   color: var(--accent);
 }
 
-/* IMAGE AND TEXT LAYOUT */
+/* =====================================
+   IMAGE AND TEXT LAYOUT
+===================================== */
 
 .scene-layout {
   position: relative;
@@ -98,12 +134,14 @@ a {
   position: absolute;
   width: min(42vw, 560px);
   height: min(60vh, 480px);
-  border-radius: 3px;
+  border-radius: 8px;
   overflow: hidden;
   z-index: 2;
+
   box-shadow:
-    0 35px 100px rgba(0, 0, 0, 0.65),
-    0 0 50px rgba(214, 183, 122, 0.08);
+    0 35px 100px rgba(38, 60, 56, 0.20),
+    0 0 50px rgba(111, 156, 150, 0.13);
+
   will-change: transform;
 }
 
@@ -111,11 +149,13 @@ a {
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     180deg,
     transparent 55%,
-    rgba(0, 0, 0, 0.6)
+    rgba(24, 54, 48, 0.65)
   );
+
   pointer-events: none;
 }
 
@@ -124,12 +164,12 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(0.8);
+  filter: saturate(0.85);
   transition: filter 0.8s ease;
 }
 
 .scene-image:hover img {
-  filter: saturate(1);
+  filter: saturate(1.1);
 }
 
 .scene-image-label {
@@ -137,12 +177,15 @@ a {
   bottom: 24px;
   left: 25px;
   z-index: 2;
-  color: #f4f0e8;
+  color: #FFFCF7;
   font-size: 9px;
   letter-spacing: 3px;
+  font-weight: 600;
 }
 
-/* SIDE TEXT */
+/* =====================================
+   SIDE TEXT
+===================================== */
 
 .scene-text {
   position: absolute;
@@ -164,15 +207,17 @@ a {
 
 .scene-number {
   display: block;
-  color: var(--accent);
+  color: var(--deep-teal);
   font-size: 10px;
   letter-spacing: 3px;
   margin-bottom: 22px;
+  font-weight: 700;
 }
 
 .scene-text h2 {
   font: 500 clamp(30px, 3.5vw, 49px)/1.12 'Playfair Display', serif;
   letter-spacing: -1px;
+  color: var(--ocean);
 }
 
 .scene-text h2 span {
@@ -192,29 +237,35 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--accent);
+  color: var(--deep-teal);
   margin-top: 28px;
   font-size: 10px;
   letter-spacing: 1px;
+  font-weight: 700;
   transition: gap 0.35s ease;
 }
 
 .scene-text a:hover {
   gap: 20px;
+  color: var(--ocean);
 }
 
-/* FOOTER */
+/* =====================================
+   FOOTER
+===================================== */
 
 .scene-footer {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  color: #777168;
+  color: #89877D;
   font-size: 9px;
   letter-spacing: 3px;
 }
 
-/* NEXT SECTION */
+/* =====================================
+   NEXT SECTION
+===================================== */
 
 .next-section {
   min-height: 75vh;
@@ -226,14 +277,21 @@ a {
   text-align: center;
   position: relative;
   overflow: hidden;
+
   background:
-    radial-gradient(ellipse at center, #211d17 0%, #11100e 48%, #090909 100%);
+    radial-gradient(
+      ellipse at center,
+      #FFFCF7 0%,
+      #EDE4D7 48%,
+      #D9E4DA 100%
+    );
 }
 
 .next-section h2 {
   font: 500 clamp(55px, 9vw, 115px) 'Playfair Display', serif;
   margin: 25px 0;
   letter-spacing: -3px;
+  color: var(--ocean);
 }
 
 .next-section p {
@@ -243,7 +301,9 @@ a {
   line-height: 1.8;
 }
 
-/* RESPONSIVE */
+/* =====================================
+   RESPONSIVE
+===================================== */
 
 @media (max-width: 900px) {
   .scroll-scene {

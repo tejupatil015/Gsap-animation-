@@ -13,33 +13,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const collections = [
   {
-    name: "Studio",
+    name: "Image Reveals",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=90",
-    units: "80",
-  },
-  {
-    name: "One Bedroom",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=90",
-    units: "64",
-  },
-  {
-    name: "Two Bedroom",
-    image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1800&q=90",
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1800&q=90",
     units: "42",
   },
   {
-    name: "Three Bedroom",
+    name: "Scroll Animations",
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=90",
+      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1800&q=90",
+    units: "80",
+  },
+  {
+    name: "Text Animations",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1800&q=90",
+    units: "64",
+  },
+  
+  {
+    name: "Parallax Effects",
+    image:
+      "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1800&q=90",
     units: "28",
   },
   {
-    name: "Four Bedroom",
+    name: "Interactive Effects",
     image:
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1800&q=90",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1800&q=90",
     units: "12",
   },
 ];
@@ -174,7 +175,7 @@ function CollectionShowcase() {
     };
   }, []);
 
-  // CHANGE COLLECTION IMAGE
+  // CHANGE ANIMATION CATEGORY IMAGE
   const changeCollection = (index) => {
     if (!hasEnteredRef.current) return;
     if (isChangingRef.current) return;
@@ -244,11 +245,11 @@ function CollectionShowcase() {
           ref={leftContentRef}
         >
           <span className="collection-eyebrow">
-            FIND YOUR SPACE
+            EXPLORE GSAP
           </span>
 
           <h2 className="collection-studio">
-            Studio
+            Motion
           </h2>
 
           <div className="collection-list">
@@ -269,7 +270,7 @@ function CollectionShowcase() {
             className="collection-view-all"
             onClick={() => changeCollection(0)}
           >
-            VIEW ALL
+            VIEW ALL EFFECTS
           </button>
 
           <div className="collection-bottom-info">
@@ -279,9 +280,9 @@ function CollectionShowcase() {
               </span>
 
               <span className="units-label">
-                units
+                animations
                 <br />
-                available
+                featured
               </span>
             </div>
 
@@ -293,7 +294,7 @@ function CollectionShowcase() {
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              SUBMIT A REQUEST
+              EXPLORE MORE
               <ArrowRight size={17} />
             </button>
           </div>
@@ -307,7 +308,7 @@ function CollectionShowcase() {
             ref={imageRef}
             className="collection-main-image"
             src={collections[0].image}
-            alt="Luxury residential interior"
+            alt="GSAP scroll animation showcase"
           />
 
           <div
@@ -321,7 +322,7 @@ function CollectionShowcase() {
         {/* NAVIGATION ARROWS */}
         <button
           className="collection-arrow collection-arrow-left"
-          aria-label="Previous collection"
+          aria-label="Previous animation"
           onClick={() =>
             changeCollection(
               (activeIndex - 1 + collections.length) %
@@ -334,7 +335,7 @@ function CollectionShowcase() {
 
         <button
           className="collection-arrow collection-arrow-right"
-          aria-label="Next collection"
+          aria-label="Next animation"
           onClick={() =>
             changeCollection(
               (activeIndex + 1) % collections.length
@@ -347,11 +348,11 @@ function CollectionShowcase() {
         {/* MAIN TITLE */}
         <div className="collection-image-title">
           <span className="collection-image-caption">
-            DESIGNED AROUND YOU
+            THE ART OF WEB MOTION
           </span>
 
           <h1 ref={titleRef}>
-            RESIDENCES
+            ANIMATION STYLES
           </h1>
         </div>
 
@@ -364,7 +365,7 @@ function CollectionShowcase() {
 
         {/* SIDE LABEL */}
         <div className="collection-side-label">
-          W. <span>Site of the Day</span>
+          GSAP <span>Creative Motion</span>
         </div>
 
         {/* BOTTOM TEXT */}
@@ -372,8 +373,8 @@ function CollectionShowcase() {
           className="collection-image-bottom"
           ref={bottomRef}
         >
-          <span>CONTEMPORARY LIVING</span>
-          <span>01 — PRIVATE COLLECTION</span>
+          <span>POWERED BY GSAP</span>
+          <span>SCROLL — EXPLORE — INTERACT</span>
         </div>
       </div>
     </section>

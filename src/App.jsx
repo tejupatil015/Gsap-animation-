@@ -31,8 +31,6 @@ function App() {
           pinSpacing: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-
-          // Refresh the pinned section before downstream triggers.
           refreshPriority: 1,
         },
       });
@@ -120,28 +118,29 @@ function App() {
       {/* SECTION 01 — PINNED SCROLL SCENE */}
       <section className="scroll-scene" ref={sectionRef}>
         <div className="scene-heading">
-          <span>THE ART OF CREATION</span>
+          <span>THE ART OF DIGITAL MOTION</span>
           <h1>
-            Design in Motion<span>.</span>
+            Motion in every detail<span>.</span>
           </h1>
         </div>
 
         <div className="scene-layout">
           <div className="scene-text left-text" ref={leftTextRef}>
-            <span className="scene-number">01 / CREATE</span>
+            <span className="scene-number">01 / IMAGINE</span>
 
             <h2>
-              Ideas become<br />
-              <span>reality.</span>
+              Ideas come<br />
+              <span>alive.</span>
             </h2>
 
             <p>
-              Every great experience begins with an idea.
-              We turn imagination into something meaningful.
+              Every remarkable animation starts with an idea.
+              With GSAP, we transform creative concepts into
+              expressive motion and immersive digital experiences.
             </p>
 
             <a href="#about">
-              Explore our approach <ArrowRight size={16} />
+              Explore the possibilities <ArrowRight size={16} />
             </a>
           </div>
 
@@ -152,45 +151,46 @@ function App() {
             />
 
             <div className="scene-image-label">
-              A NEW PERSPECTIVE
+              CREATIVITY IN MOTION
             </div>
           </div>
 
           <div className="scene-text right-text" ref={rightTextRef}>
-            <span className="scene-number">02 / INSPIRE</span>
+            <span className="scene-number">02 / ANIMATE</span>
 
             <h2>
-              Make it<br />
-              <span>memorable.</span>
+              Make every<br />
+              <span>moment move.</span>
             </h2>
 
             <p>
-              Beautiful visuals and thoughtful motion
-              create experiences people remember.
+              Smooth transitions, cinematic reveals, interactive
+              elements and scroll-driven animations turn ordinary
+              web pages into extraordinary experiences.
             </p>
 
             <a href="#about">
-              Discover more <ArrowRight size={16} />
+              Discover the experience <ArrowRight size={16} />
             </a>
           </div>
         </div>
 
         <div className="scene-footer">
-          <span>CREATIVE STUDIO — 2026</span>
+          <span>GSAP — CREATIVE MOTION STUDIO</span>
           <span>SCROLL TO EXPLORE ↓</span>
         </div>
       </section>
 
-      {/* SECTION 02 */}
+      {/* SECTION 02 — INTERACTIVE ANIMATIONS */}
       <ExpandableCards />
 
-      {/* SECTION 03 */}
+      {/* SECTION 03 — CREATIVE VISUAL EXPERIENCES */}
       <Residences />
 
-      {/* SECTION 04 */}
+      {/* SECTION 04 — ANIMATION COLLECTION */}
       <CollectionShowcase />
 
-      {/* SECTION 05 */}
+      {/* SECTION 05 — CINEMATIC ANIMATION HERO */}
       <CinematicHero />
     </main>
   );

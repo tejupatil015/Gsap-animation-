@@ -9,24 +9,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const residences = [
   {
-    name: "The Living Space",
+    name: "Creative Motion",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=90",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1800&q=90",
   },
   {
-    name: "Modern Architecture",
+    name: "Digital Experiences",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=90",
+      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1800&q=90",
   },
   {
-    name: "Elegant Interiors",
+    name: "Abstract Dimensions",
     image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1400&q=90",
+      "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=1800&q=90",
   },
   {
-    name: "Contemporary Design",
+    name: "Visual Experiments",
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1400&q=90",
+      "https://images.unsplash.com/photo-1635372722656-0ba1d4b6e3f5?w=1800&q=90",
   },
 ];
 
@@ -47,7 +47,6 @@ function Residences() {
   // ENTRANCE ANIMATION + SLIDESHOW
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // INITIAL HIDDEN STATES
       gsap.set(backgroundRef.current, {
         autoAlpha: 0,
         scale: 1.08,
@@ -76,7 +75,6 @@ function Residences() {
         autoAlpha: 0,
       });
 
-      // START ONLY WHEN SECTION ENTERS VIEWPORT
       const entrance = gsap.timeline({
         defaults: {
           ease: "power3.out",
@@ -92,8 +90,6 @@ function Residences() {
 
         onComplete: () => {
           hasEnteredRef.current = true;
-
-          // Start slideshow only after entrance animation
           startSlideshow();
         },
       });
@@ -264,14 +260,14 @@ function Residences() {
       {/* HEADING */}
       <div className="residences-title-wrap">
         <span className="residences-eyebrow">
-          A PLACE TO BELONG
+          THE ART OF DIGITAL MOTION
         </span>
 
         <h1
           className="residences-title"
           ref={titleRef}
         >
-          RESIDENCES<span>.</span>
+          GSAP.Animation
         </h1>
       </div>
 
@@ -284,20 +280,19 @@ function Residences() {
 
         <div>
           <span className="description-label">
-            THOUGHTFULLY DESIGNED
+            CREATIVITY IN MOTION
           </span>
 
           <p>
-            Designed with contemporary living in mind, each
-            residence balances functionality, comfort, and
-            aesthetics. Open-plan layouts, excellent natural
-            light, refined materials, and carefully considered
-            details create spaces that feel both welcoming
-            and enduring.
+            Explore the world of creative web animation.
+            From cinematic transitions and smooth scrolling
+            to immersive visual effects, every interaction
+            transforms a simple website into an engaging
+            digital experience.
           </p>
 
           <a href="#inquire" className="residence-discover">
-            DISCOVER THE COLLECTION
+            EXPLORE THE ANIMATIONS
             <ArrowRight size={15} />
           </a>
         </div>
@@ -308,8 +303,8 @@ function Residences() {
         className="residences-bottom"
         ref={footerRef}
       >
-        <span>01 — 04 / PRIVATE COLLECTION</span>
-        <span>DESIGNED FOR LIVING</span>
+        <span>01 — 04 / MOTION COLLECTION</span>
+        <span>POWERED BY GSAP</span>
         <span>SCROLL TO EXPLORE ↓</span>
       </div>
     </section>

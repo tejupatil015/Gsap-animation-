@@ -22,7 +22,6 @@ function ExpandableCards() {
   // 1. CINEMATIC SCROLL REVEAL
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Keep everything hidden until this section enters viewport.
       gsap.set(headingRef.current, {
         autoAlpha: 0,
         y: 45,
@@ -85,7 +84,6 @@ function ExpandableCards() {
 
   // 2. HOVER EXPAND / SHRINK
   useEffect(() => {
-    // Don't run hover animation before scroll reveal completes.
     if (!hasEnteredRef.current) return;
 
     if (active === -1) {
@@ -150,8 +148,8 @@ function ExpandableCards() {
       onMouseLeave={handleMouseLeave}
     >
       <div className="gallery-heading" ref={headingRef}>
-        <span>SELECT YOUR EXPERIENCE</span>
-        <h2>Explore the world.</h2>
+        <span>EXPLORE THE WORLD OF MOTION</span>
+        <h2>Every frame tells a story.</h2>
       </div>
 
       <div className="expandable-gallery-row">
@@ -184,7 +182,7 @@ function ExpandableCards() {
               <button
                 onClick={() => navigate(`/detail/${card.id}`)}
               >
-                Discover more <span>↗</span>
+                Explore animation <span>↗</span>
               </button>
             </div>
           </div>

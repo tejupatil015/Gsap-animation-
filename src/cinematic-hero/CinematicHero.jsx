@@ -21,7 +21,6 @@ function CinematicHero() {
     const ctx = gsap.context(() => {
       const images = imageRefs.current;
 
-      // INITIAL HIDDEN STATES
       gsap.set(images, {
         autoAlpha: 0,
         scale: 1.15,
@@ -50,7 +49,6 @@ function CinematicHero() {
         }
       );
 
-      // CINEMATIC SCROLL TIMELINE
       const tl = gsap.timeline({
         paused: true,
         defaults: {
@@ -205,7 +203,7 @@ function CinematicHero() {
       onMouseLeave={handleMouseLeave}
     >
       <h1 className="cinematic-heading" ref={headingRef}>
-        YOUR <span>SPACE</span>
+        GSAP <span>ANIMATIONS</span>
       </h1>
 
       <div className="cinematic-images">
@@ -215,7 +213,7 @@ function CinematicHero() {
         >
           <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=85"
-            alt="Modern luxury building"
+            alt="Creative visual animation"
           />
         </div>
 
@@ -225,7 +223,7 @@ function CinematicHero() {
         >
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&q=85"
-            alt="Portrait in natural light"
+            alt="Creative visual composition"
           />
         </div>
 
@@ -235,7 +233,7 @@ function CinematicHero() {
         >
           <img
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85"
-            alt="Elegant modern interior"
+            alt="Immersive visual experience"
           />
         </div>
       </div>
@@ -245,11 +243,12 @@ function CinematicHero() {
         ref={descriptionRef}
       >
         <p>
-          A place where architecture meets emotion,
-          and every detail creates a better way of living.
+          Explore the art of motion through creative
+          web experiences, interactive effects, and
+          smooth scroll-driven animations.
         </p>
 
-        <span>DISCOVER A NEW PERSPECTIVE ↗</span>
+        <span>EXPLORE ANIMATION TECHNIQUES ↗</span>
       </div>
 
       <div
@@ -257,14 +256,14 @@ function CinematicHero() {
         ref={sideLabelRef}
       >
         <span>A.</span>
-        <span>LIVE BEAUTIFULLY</span>
+        <span>THE ART OF MOTION</span>
       </div>
 
       <div
         className="cinematic-footer"
         ref={footerRef}
       >
-        <span>DESIGNED FOR LIVING</span>
+        <span>POWERED BY GSAP</span>
         <span>MOVE YOUR MOUSE TO EXPLORE ↗</span>
       </div>
     </section>
